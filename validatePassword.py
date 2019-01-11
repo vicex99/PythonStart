@@ -1,10 +1,10 @@
 def comprobar(inputPassword):
     haveNumeric = False
 
-    longer = False
     haveMayus = False
     haveMinus = False
     notSpace = False
+    haveAlphaNum = False
 
     if len(inputPassword) > 12:
         for caracter in inputPassword:
@@ -16,11 +16,14 @@ def comprobar(inputPassword):
                 haveMinus = True
             elif caracter.isupper() & ~haveMayus:
                 haveMayus = True
+            elif caracter.isalpha() & ~haveAlphaNum:
+                haveAlphaNum = True
 
-            if haveMinus & haveMayus & haveMayus & notSpace:
-                print("valida")
-            else:
-                print("La contraseña elegida no es segura")
+        if haveMinus & haveMayus & haveMayus & haveAlphaNum & ~notSpace:
+            print("valida")
+        else:
+            print("La contraseña elegida no es segura")
+
     else:
         print("La contraseña elegida no es segura")
 

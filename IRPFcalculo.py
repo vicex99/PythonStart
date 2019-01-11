@@ -29,19 +29,14 @@ def calculoIf(sueldo):
         iSueldo = int(sueldo)
         if iSueldo < 12450:
             iSueldo = (iSueldo * 19) / 100
-            print(1)
         elif iSueldo < 20200:
             iSueldo = (iSueldo * 24) / 100
-            print(2)
         elif iSueldo < 35200:
             iSueldo = (iSueldo * 30) / 100
-            print(3)
         elif iSueldo < 60000:
             iSueldo = (iSueldo * 37) / 100
-            print(4)
         else:
             iSueldo = (iSueldo * 45) / 100
-            print(5)
         print(iSueldo)
     else:
         print("el sueldo tiene que ser un valor numerico")
